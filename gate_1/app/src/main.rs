@@ -41,6 +41,39 @@ fn to_centigrade(number: f64) -> f64 {
     output
 }
 
+fn fibonacci(){
+    let mut nth = String::new();
+
+    println!("Input length of your sequence");
+
+    std::io::stdin().read_line(&mut nth).unwrap();
+
+    let mut nth: u32 = nth.trim().parse().unwrap();
+
+    let mut first_number = 0;
+    let mut second_number = 1;
+
+    if nth <= 0 {
+        println!("Input a positive number");
+    }
+    else if nth == 1 {
+        println!("{first_number}")
+    }
+    else {
+        println!("Fibonacci series");
+        for _i in 0..nth{
+            println!("{first_number}");
+            nth = first_number + second_number;
+            first_number = second_number;
+            second_number = nth;
+        }
+    }
+
+
+
+}
+
 fn main() {
     temp_converter();
+    fibonacci();
 }
